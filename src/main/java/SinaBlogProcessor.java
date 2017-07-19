@@ -11,9 +11,10 @@ import us.codecraft.webmagic.processor.PageProcessor;
 public class SinaBlogProcessor implements PageProcessor {
 
     public static final String URL_LIST = "http://blog\\.sina\\.com\\.cn/s/articlelist_1487828712_0_\\d+\\.html";
+//    http://blog.sina.com.cn/s/articlelist_1487828712_0_1.html
 
     public static final String URL_POST = "http://blog\\.sina\\.com\\.cn/s/blog_\\w+\\.html";
-
+//    http://blog.sina.com.cn/s/blog_58ae76e80100to5q.html
     private Site site = Site
             .me()
             .setDomain("blog.sina.com.cn")

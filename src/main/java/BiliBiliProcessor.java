@@ -9,7 +9,8 @@ import us.codecraft.webmagic.processor.PageProcessor;
  * @author code4crafter@gmail.com <br>
  */
 public class BiliBiliProcessor implements PageProcessor {
-
+    public static final String URL_POST = "http://www\\.bilibili\\.com/video\\w+";
+//    www.bilibili.com/video/av12289764?from=search&amp;seid=5968954024006427484
     private Site site = Site
             .me()
             .setSleepTime(3000)
@@ -17,8 +18,7 @@ public class BiliBiliProcessor implements PageProcessor {
                     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31");
 
     public void process(Page page) {
-        //div[@class="articleList"]
-        page.putField("title", page.getHtml().xpath("//li[@class='video matrix ']"));
+        page.putField("title", page.getHtml().xpath("//li[@class=\"video matrix \"]").links().all());
     }
 
     public Site getSite() {
